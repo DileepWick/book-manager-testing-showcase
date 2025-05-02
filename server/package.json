@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-"scripts": {
-  "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
-  "dev": "nodemon server.js",
-  "start": "node server.js"
-},
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
+    "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand 'Database Integration Testing'",
+    "test:api": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand 'Functional API Testings'",
+    "test:performance": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand 'Book Performance Testing'",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
