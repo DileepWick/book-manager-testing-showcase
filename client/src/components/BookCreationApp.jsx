@@ -48,7 +48,7 @@ const BookCreationApp = () => {
     setMessage({ text: '', isError: false });
 
     try {
-      const response = await fetch('/api/books', {
+      const response = await fetch('http://localhost:5000/api/books', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

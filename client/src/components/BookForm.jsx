@@ -11,7 +11,7 @@ const BookForm = ({ formData, handleChange, handleSubmit, isLoading }) => (
         name='title'
         value={formData.title}
         onChange={handleChange}
-        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-black/50 placeholder- focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
+        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-black placeholder-black/50 placeholder- focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
         placeholder='Enter book title'
       />
     </div>
@@ -25,7 +25,7 @@ const BookForm = ({ formData, handleChange, handleSubmit, isLoading }) => (
         name='author'
         value={formData.author}
         onChange={handleChange}
-        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-black/50 placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
+        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-black placeholder-black/50 placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
         placeholder='Enter author name'
       />
     </div>
@@ -76,7 +76,7 @@ const BookForm = ({ formData, handleChange, handleSubmit, isLoading }) => (
         name='isbn'
         value={formData.isbn}
         onChange={handleChange}
-        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-black/50 placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
+        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-black placeholder-black/50 placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
         placeholder='Enter ISBN'
       />
     </div>
