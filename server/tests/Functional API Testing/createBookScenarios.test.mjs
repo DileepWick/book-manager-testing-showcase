@@ -1,9 +1,9 @@
 import request from "supertest";
-import { Book } from "../models/Book.js";
-import { connectDB } from "../config/db.js";
-import app from "../server.js"; // Import the app
-import { closeServer } from "../server.js"; // Import the closeServer
-import { disconnectDB } from "../config/db.js";
+import { Book } from "../../models/Book.js";
+import { connectDB } from "../../config/db.js";
+import app from "../../server.js"; // Import the app
+import { closeServer } from "../../server.js"; // Import the closeServer
+import { disconnectDB } from "../../config/db.js";
 
 let server;
 
