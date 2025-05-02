@@ -1,96 +1,108 @@
 import React from 'react';
 
 const BookForm = ({ formData, handleChange, handleSubmit, isLoading }) => (
-  <div className='space-y-6'>
-    <div>
-      <label className='block text-white text-opacity-90 font-light mb-2'>
+  <form onSubmit={handleSubmit} className='space-y-4'>
+    <div className='space-y-2'>
+      <label htmlFor='title' className='block text-sm font-medium'>
         Title
       </label>
       <input
+        id='title'
         type='text'
         name='title'
         value={formData.title}
         onChange={handleChange}
-        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-black placeholder-black/50 placeholder- focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
+        className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black'
         placeholder='Enter book title'
       />
     </div>
 
-    <div>
-      <label className='block text-white text-opacity-90 font-light mb-2'>
+    <div className='space-y-2'>
+      <label htmlFor='author' className='block text-sm font-medium'>
         Author
       </label>
       <input
+        id='author'
         type='text'
         name='author'
         value={formData.author}
         onChange={handleChange}
-        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-black placeholder-black/50 placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
+        className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black'
         placeholder='Enter author name'
       />
     </div>
 
-    <div>
-      <label className='block text-white text-opacity-90 font-light mb-2'>
+    <div className='space-y-2'>
+      <label htmlFor='genre' className='block text-sm font-medium'>
         Genre
       </label>
       <select
+        id='genre'
         name='genre'
         value={formData.genre}
         onChange={handleChange}
-        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-black/50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md appearance-none'
+        className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black appearance-none bg-white'
       >
-        <option value='Fiction' className='bg-stone-100'>
-          Fiction
-        </option>
-        <option value='Non-Fiction' className='bg-stone-100'>
-          Non-Fiction
-        </option>
-        <option value='Science Fiction' className='bg-stone-100'>
-          Science Fiction
-        </option>
-        <option value='Fantasy' className='bg-stone-100'>
-          Fantasy
-        </option>
-        <option value='Mystery' className='bg-stone-100'>
-          Mystery
-        </option>
-        <option value='Thriller' className='bg-stone-100'>
-          Thriller
-        </option>
-        <option value='Romance' className='bg-stone-100'>
-          Romance
-        </option>
-        <option value='Biography' className='bg-stone-100'>
-          Biography
-        </option>
+        <option value='Fiction'>Fiction</option>
+        <option value='Non-Fiction'>Non-Fiction</option>
+        <option value='Science Fiction'>Science Fiction</option>
+        <option value='Fantasy'>Fantasy</option>
+        <option value='Mystery'>Mystery</option>
+        <option value='Thriller'>Thriller</option>
+        <option value='Romance'>Romance</option>
+        <option value='Biography'>Biography</option>
       </select>
     </div>
 
-    <div>
-      <label className='block text-white text-opacity-90 font-light mb-2'>
+    <div className='space-y-2'>
+      <label htmlFor='isbn' className='block text-sm font-medium'>
         ISBN
       </label>
       <input
+        id='isbn'
         type='text'
         name='isbn'
         value={formData.isbn}
         onChange={handleChange}
-        className='w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-black placeholder-black/50 placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 backdrop-blur-md'
+        className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black'
         placeholder='Enter ISBN'
       />
     </div>
 
-    <div className='pt-4'>
-      <button
-        onClick={handleSubmit}
-        className='w-full px-6 py-3 bg-black/60 bg-opacity-20 hover:bg-opacity-30 text-white font-light rounded-lg transition-all duration-500 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 border border-black border-opacity-20 hover:bg-black cursor-pointer'
-        disabled={isLoading}
-      >
-        {isLoading ? 'Processing...' : 'Add Book'}
-      </button>
-    </div>
-  </div>
+    <button
+      type='submit'
+      className='w-full px-4 py-2 mt-4 text-white bg-black rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
+      disabled={isLoading}
+    >
+      {isLoading ? (
+        <span className='flex items-center justify-center'>
+          <svg
+            className='w-5 h-5 mr-2 animate-spin'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+          >
+            <circle
+              className='opacity-25'
+              cx='12'
+              cy='12'
+              r='10'
+              stroke='currentColor'
+              strokeWidth='4'
+            ></circle>
+            <path
+              className='opacity-75'
+              fill='currentColor'
+              d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+            ></path>
+          </svg>
+          Processing...
+        </span>
+      ) : (
+        'Add Book'
+      )}
+    </button>
+  </form>
 );
 
 export default BookForm;

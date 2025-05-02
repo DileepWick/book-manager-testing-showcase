@@ -9,12 +9,14 @@ const CreateBookPanel = ({
   handleSubmit,
   isLoading,
 }) => (
-  <div className='w-full bg-white/10 bg-opacity-20 backdrop-blur-lg rounded-2xl border border-white border-opacity-30 shadow-lg overflow-hidden'>
-    <div className='px-8 py-6 border-b border-white border-opacity-20'>
-      <h2 className='text-2xl font-light text-white'>Add New Book</h2>
+  <div className='bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden'>
+    <div className='px-6 py-4 border-b border-gray-200'>
+      <h2 className='text-xl font-semibold'>Add New Book</h2>
+      <p className='text-sm text-gray-500'>
+        Fill in the details to add a book to your collection.
+      </p>
     </div>
-
-    <div className='p-8'>
+    <div className='p-6'>
       <MessageAlert message={message} />
       <BookForm
         formData={formData}

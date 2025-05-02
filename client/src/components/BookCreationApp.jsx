@@ -6,7 +6,7 @@ const BookCreationApp = () => {
   const [formData, setFormData] = useState({
     title: '',
     author: '',
-    genre: '',
+    genre: 'Fiction',
     isbn: '',
   });
   const [message, setMessage] = useState({ text: '', isError: false });
@@ -21,7 +21,7 @@ const BookCreationApp = () => {
   const fetchBooks = async () => {
     setIsLoadingBooks(true);
     try {
-      const response = await fetch('/api/books');
+      const response = await fetch('http://localhost:5000/api/books');
       if (!response.ok) {
         throw new Error('Failed to fetch books');
       }
@@ -63,7 +63,7 @@ const BookCreationApp = () => {
       }
 
       setMessage({ text: 'Book created successfully!', isError: false });
-      setFormData({ title: '', author: '', genre: '', isbn: '' });
+      setFormData({ title: '', author: '', genre: 'Fiction', isbn: '' });
 
       // Refresh books list
       fetchBooks();
@@ -75,8 +75,8 @@ const BookCreationApp = () => {
   };
 
   return (
-    <main className='flex-grow container mx-auto px-100 py-12'>
-      <div className='flex flex-col'>
+    <main className='flex-grow container mx-auto px-4 pt-6'>
+      <div className='grid gap-10 md:grid-cols-1 lg:grid-cols-2'>
         <CreateBookPanel
           message={message}
           formData={formData}

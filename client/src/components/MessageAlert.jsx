@@ -5,10 +5,10 @@ const MessageAlert = ({ message }) => {
 
   return (
     <div
-      className={`mb-6 px-4 py-3 rounded-lg backdrop-blur-md ${
+      className={`mb-6 px-4 py-3 rounded-md ${
         message.isError
-          ? 'bg-red-500 bg-opacity-20 text-red-100 border border-red-200 border-opacity-30'
-          : 'bg-green-500 bg-opacity-20 text-green-100 border border-green-200 border-opacity-30'
+          ? 'bg-red-50 text-red-700 border border-red-100'
+          : 'bg-green-50 text-green-700 border border-green-100'
       }`}
     >
       {message.text}
