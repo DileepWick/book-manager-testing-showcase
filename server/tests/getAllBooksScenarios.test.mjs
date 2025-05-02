@@ -61,7 +61,7 @@ describe("GET /api/books", () => {
     expect(res.body).toBeInstanceOf(Array);
     expect(res.body.length).toBe(2);
     expect(res.body[0]).toHaveProperty("_id");
-    expect(res.body[0].title).toBe("Test Book 1");
-    expect(res.body[1].title).toBe("Test Book 2");
+    expect(res.body[0].title).toBe("Test Book 2");
+    expect(res.body[1].title).toBe("Test Book 1");
   });
 });
