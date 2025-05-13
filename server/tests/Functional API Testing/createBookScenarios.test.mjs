@@ -36,6 +36,9 @@ describe("POST /api/books", () => {
     expect(res.statusCode).toBe(201);
     expect(res.body).toHaveProperty("_id");
     expect(res.body.title).toBe("Test Book");
+
+    console.log("Test Scenario 1 - Should create a new book with valid data : Passed ✅");
+
   });
 
   it("Test Scenario 2 : should not create a book with missing fields", async () => {
@@ -44,6 +47,7 @@ describe("POST /api/books", () => {
       .send({ title: "Incomplete Book" });
 
     expect(res.statusCode).toBe(400);
+    console.log("Test Scenario 2 - Should not create a book with missing fields: Passed ✅");
   });
 
   it("Test Scenario 3 : should not create a book with duplicate ISBN", async () => {
@@ -62,5 +66,6 @@ describe("POST /api/books", () => {
     });
 
     expect(res.statusCode).toBe(409);
+    console.log("Test Scenario 3 - Should not create a book with duplicate ISBN: Passed ✅");
   });
 });
